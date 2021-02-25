@@ -7,7 +7,6 @@ public class Nivell3RellotgeApp {
 		int minut=0;
 		int segon=0;
 		String rellotge_str;
-		int i=0;
 		while (true) {
 			LocalDateTime locaDate = LocalDateTime.now();
 			hora  = locaDate.getHour();
@@ -24,7 +23,6 @@ public class Nivell3RellotgeApp {
 			rellotge_str+=String.valueOf(segon);
 			System.out.println(rellotge_str);
 			Thread.sleep(1000);
-			i++;
 		}
 	}
 
