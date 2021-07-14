@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.bean.Libro;
 import com.example.demo.bean.Usuario;
-import com.example.demo.repository.BaseDatos;
+import com.example.demo.repository.*;
 
 @Controller
 @RequestMapping("")
 public class Controlador {
 	
-	BaseDatos bd=new BaseDatos();
+	//BaseDatos bd=new BaseDatos();
+	BaseDatos2 bd =new BaseDatos2();
 	Usuario usuario;
 
 	@GetMapping("/")
