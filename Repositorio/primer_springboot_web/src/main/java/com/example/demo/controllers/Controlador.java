@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,9 @@ import com.example.demo.repository.*;
 public class Controlador {
 	
 	//BaseDatos bd=new BaseDatos();
-	BaseDatos2 bd =new BaseDatos2();
+	//BaseDatos2 bd =new BaseDatos2();
+	@Autowired
+	BaseDatos3Service bd;
 	Usuario usuario;
 
 	@GetMapping("/")
@@ -29,7 +32,8 @@ public class Controlador {
 	
 	@PostMapping("/")
 	public String login(Usuario usuario, Model model) {
-		if (usuario.getNombre().equals("edu") && usuario.getPassword().equals("edu")) {
+		if (bd.compruebaUsuario(usuario.getNombre(), usuario.getPassword())) {
+
 			ArrayList<Libro> libros=bd.getLibros();
 			model.addAttribute("usuario",usuario);
 			this.usuario=usuario;
@@ -38,6 +42,7 @@ public class Controlador {
 			model.addAttribute("boton","Inserta Libro");
 			model.addAttribute("action","/insertar");
 			return "consulta";
+		
 		} else {
 			return "login";
 		}

@@ -1,12 +1,31 @@
 package com.example.demo.bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="libros")
 public class Libro {
+	
+	@Id
+	@Column(name="id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name="titulo", nullable=false, length=30)
 	private String titulo;
 	private String autor;
 	private String editorial;
 	private String fecha;
 	private String tematica;
+	
+	Libro() {
+		
+	}
 	
 	public Libro(int id, String titulo, String autor, String editorial, String fecha, String tematica) {
 		super();
