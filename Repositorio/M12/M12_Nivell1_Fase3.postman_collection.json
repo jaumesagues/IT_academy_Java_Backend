@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "88ca9c14-1817-4260-9fda-b39659672626",
+		"name": "M12_Nivell1_Fase3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "M12_Nivell1_Fase3_IP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}",
+					"host": [
+						"{{IP}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "M12_Nivell1_Fase3_IP_port",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IP}}/{{port}}",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"{{port}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
